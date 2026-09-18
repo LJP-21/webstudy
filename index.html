@@ -1,0 +1,226 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!-- 页面头部 -->
+    <header>
+      <h1>用户注册</h1>
+    </header>
+
+    <!-- 主体区域 -->
+    <main>
+      <!-- 注册流程表 -->
+      <h3>注册须知</h3>
+      <table>
+        <thead>
+          <tr>
+            <th rowspan="2">填写项目</th>
+            <th colspan="2">填写要求</th>
+          </tr>
+          <tr>
+            <th>必填项</th>
+            <th>选填项</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>用户名</td>
+            <td>4-16位字母、数字或下划线</td>
+            <td>—</td>
+          </tr>
+          <tr>
+            <td>密码</td>
+            <td>6-16位字符</td>
+            <td>—</td>
+          </tr>
+          <tr>
+            <td>确认密码</td>
+            <td>须与密码完全一致</td>
+            <td>—</td>
+          </tr>
+          <tr>
+            <td>性别</td>
+            <td>男 / 女</td>
+            <td>—</td>
+          </tr>
+          <tr>
+            <td>出生日期</td>
+            <td>—</td>
+            <td>选择日期</td>
+          </tr>
+          <tr>
+            <td>邮箱</td>
+            <td>标准邮箱格式</td>
+            <td>—</td>
+          </tr>
+          <tr>
+            <td>手机号</td>
+            <td>—</td>
+            <td>11位数字</td>
+          </tr>
+          <tr>
+            <td rowspan="2">其他信息</td>
+            <td>兴趣爱好</td>
+            <td>头像上传</td>
+          </tr>
+          <tr>
+            <td colspan="2">请如实填写，确保信息准确无误</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <hr />
+
+      <!-- 有序列表：注册步骤 -->
+      <h3>注册步骤</h3>
+      <ol>
+        <li>填写个人基本信息（用户名、密码、邮箱等）</li>
+        <li>选择性别、出生日期等补充信息</li>
+        <li>上传头像并选择所在城市</li>
+        <li>阅读并同意用户服务协议</li>
+        <li>点击"注册"按钮提交表单</li>
+      </ol>
+
+      <hr />
+
+      <!-- 无序列表：注意事项 -->
+      <h3>注意事项</h3>
+      <ul>
+        <li>用户名注册后不可修改，请谨慎填写</li>
+        <li>密码请勿使用过于简单的组合</li>
+        <li>邮箱必须真实有效，用于找回密码</li>
+        <li>手机号选填，但建议填写以便联系</li>
+        <li>请确保两次输入的密码一致</li>
+      </ul>
+
+      <hr />
+
+      <!-- 定义列表：常见问题 -->
+      <h3>常见问题</h3>
+      <dl>
+        <dt>忘记密码怎么办？</dt>
+        <dd>可通过注册邮箱找回密码，点击登录页的"忘记密码"链接。</dd>
+
+        <dt>用户名可以修改吗？</dt>
+        <dd>用户名一旦注册成功将无法修改，请注册时仔细确认。</dd>
+
+        <dt>一个邮箱能注册几个账号？</dt>
+        <dd>一个邮箱只能注册一个账号，不可重复使用。</dd>
+
+        <dt>注册需要收费吗？</dt>
+        <dd>注册完全免费，基础功能均可免费使用。</dd>
+      </dl>
+
+      <hr />
+
+      <!-- 注册表单 -->
+      <h4>请填写您的信息</h4>
+      <form
+        id="registerForm"
+        action="#"
+        method="post"
+        enctype="multipart/form-data"
+      >
+        用户名:<input type="text" name="username" id="username" required />
+        <br />
+        密码:<input
+          type="password"
+          name="password"
+          id="password"
+          placeholder="密码必须为6-16位字符"
+          required
+        />
+        <br />
+        确认密码:<input
+          type="password"
+          name="confirmPassword"
+          id="confirmPassword"
+          required
+        />
+        <br />
+        性别：<label
+          ><input type="radio" name="gender" value="male" checked /> 男</label
+        >
+        <label><input type="radio" name="gender" value="female" /> 女</label>
+        <br />
+        出生日期:<input type="date" name="birthDate" id="birthDate" />
+        <br />
+        邮箱:<input type="email" name="email" id="email" required />
+        <br />
+        手机号:<input type="tel" name="phone" id="phone" pattern="[0-9]{11}" />
+        <br />
+        兴趣爱好:
+        <input type="checkbox" name="hobby" value="编程" checked />编程
+        <input type="checkbox" name="hobby" value="唱歌" />唱歌
+        <input type="checkbox" name="hobby" value="cs2" />cs2
+        <input type="checkbox" name="hobby" value="健身" />健身
+        <br />
+        头像上传:<input
+          type="file"
+          name="avatar"
+          id="avatar"
+          accept="image/*"
+          multiple
+        />
+        <br />
+        所在城市:
+        <select name="city" id="city">
+          <option value="beijing">长沙</option>
+          <option value="shanghai" selected>常德</option>
+          <option value="guangzhou">邵阳</option>
+          <option value="shenzhen">岳阳</option>
+        </select>
+        <br />
+        个人简介：<textarea name="bio" id="bio" rows="6" cols="50"></textarea>
+        <br />
+        <button type="submit">注册</button>
+        <button type="reset">重置</button>
+      </form>
+    </main>
+    <!-- 页面底部 -->
+    <footer>
+      <p>web前端学习 liujiapeng0621@outlook.com</p>
+    </footer>
+
+    <!-- JavaScript：表单数据收集与验证 -->
+    <script>
+      var form = document.getElementById("registerForm");
+
+      form.addEventListener("submit", function (event) {
+        event.preventDefault();
+
+        var password = document.getElementById("password").value;
+        var confirmPassword = document.getElementById("confirmPassword").value;
+
+        if (password !== confirmPassword) {
+          alert("两次输入的密码不一致，请重新输入！");
+          return;
+        }
+
+        var formData = new FormData(form);
+
+        console.log("========== 用户注册信息 ==========");
+        console.log("用户名：" + formData.get("username"));
+        console.log("密码：" + formData.get("password"));
+        console.log("确认密码：" + formData.get("confirmPassword"));
+        console.log("性别：" + formData.get("gender"));
+        console.log("出生日期：" + formData.get("birthDate"));
+        console.log("邮箱：" + formData.get("email"));
+        console.log("手机号：" + formData.get("phone"));
+        console.log("兴趣爱好：" + formData.getAll("hobby").join(", "));
+        console.log(
+          "头像：" +
+            (formData.get("avatar") ? formData.get("avatar").name : "未选择"),
+        );
+        console.log("所在城市：" + formData.get("city"));
+        console.log("个人简介：" + formData.get("bio"));
+        console.log("================================");
+
+        alert("注册信息已提交！请按 F12 打开 Console 查看收集到的数据。");
+      });
+    </script>
+  </body>
+</html>
